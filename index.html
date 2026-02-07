@@ -4,34 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Be My Valentine? 💘</title>
+
+  <!-- Premium fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-hearts" aria-hidden="true"></div>
-
-  <!-- Music toggle -->
-  <button id="muteBtn" class="mute-btn" aria-label="Toggle music">🔇 Music</button>
+  <!-- dreamy background -->
+  <div class="bg" aria-hidden="true">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+    <div class="sparkles"></div>
+  </div>
 
   <main class="card">
     <header class="top">
-      <span class="badge">💌 For You</span>
+      <span class="badge">💌 Just one question…</span>
       <h1 id="title">Will you be my Valentine? 💖</h1>
-      <p id="subtitle">I promise unlimited love, snacks, and attention 😄</p>
+      <p id="subtitle">Be honest… you already know the right answer 😌</p>
     </header>
 
     <section class="gif-wrap">
       <img id="gif" alt="valentine gif"
         src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjQ1b2x1Z3Q2cWhnZ3h5c2R3c3d0bXh5cGx5dTg2dGZ0Z2RrZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif" />
+      <div class="gif-caption" id="gifCaption">I’m trying to look confident… it’s not working 🥺</div>
     </section>
 
-    <div class="message" id="message">Click one… choose wisely 😏</div>
+    <div class="message" id="message">
+      Pick one… and please don’t bully my heart 😭💗
+    </div>
 
     <section class="buttons">
       <button id="yesBtn" class="btn yes">Yes 💘</button>
       <button id="noBtn" class="btn no">No 🙈</button>
     </section>
 
-    <footer class="footer">Made with ❤️ just for you</footer>
+    <footer class="footer">Made with feelings • delivered with courage ✨</footer>
   </main>
 
   <!-- Confetti canvas -->
@@ -40,32 +52,72 @@
   <!-- Kiss stamp -->
   <div id="kissStamp" class="kiss-stamp" aria-hidden="true">💋</div>
 
-  <!-- Background music -->
-  <audio id="bgMusic" loop preload="auto">
-    <!-- Put your own file named music.mp3 in the same folder -->
-    <source src="music.mp3" type="audio/mpeg" />
-  </audio>
-
   <!-- Name Modal -->
   <div class="modal" id="nameModal">
     <div class="modal-box">
-      <div class="modal-title">Hey cutie 💞</div>
-      <div class="modal-text">Enter your name:</div>
+      <div class="modal-title">Hey you 💞</div>
+      <div class="modal-text">Type your name… I want this to feel personal ✨</div>
       <input id="nameInput" class="modal-input" type="text" placeholder="e.g., Sita" maxlength="20" />
       <div class="modal-actions">
-        <button id="startBtn" class="btn yes modal-btn">Start 💖</button>
+        <button id="startBtn" class="btn yes modal-btn">Continue 💗</button>
       </div>
-      <div class="modal-hint">Tip: press Enter</div>
+      <div class="modal-hint">Press Enter to continue</div>
     </div>
   </div>
 
-  <!-- Love Letter Modal -->
+  <!-- Envelope Modal -->
+  <div class="modal" id="envelopeModal" style="display:none;">
+    <div class="modal-box env-box">
+      <div class="modal-title" id="envTitle">A secret letter 💌</div>
+      <div class="modal-text" id="envText">Open it… I wrote it with my whole heart 🥺</div>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelopeArt" aria-hidden="true">
+          <div class="env-back"></div>
+          <div class="env-paper peek"></div>
+          <div class="env-flap"></div>
+          <div class="env-front"></div>
+          <div class="env-seal">💗</div>
+          <div class="env-shadow"></div>
+        </div>
+        <div class="env-note">Tap “Open”… I’m nervous 😳</div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="openEnvelopeBtn" class="btn yes modal-btn">Open ✉️</button>
+      </div>
+
+      <div class="modal-hint">Warning: may cause smiling.</div>
+    </div>
+  </div>
+
+  <!-- Letter Modal -->
   <div class="modal" id="letterModal" style="display:none;">
     <div class="modal-box letter-box">
-      <div class="modal-title" id="letterTitle">For You 💌</div>
+      <div class="modal-title" id="letterTitle">A love note 💌</div>
 
-      <div class="letter-paper">
-        <div id="typedLetter" class="letter-text"></div>
+      <div class="letter-sheet">
+        <div class="paper-tape tape-left"></div>
+        <div class="paper-tape tape-right"></div>
+
+        <div class="letter-margin"></div>
+
+        <div class="letter-head">
+          <div class="head-text" id="letterHeadText">To my favorite person ✨</div>
+          <div class="stamp">✿</div>
+        </div>
+
+        <div class="letter-content">
+          <div id="typedLetter" class="letter-text"></div>
+        </div>
+
+        <div class="letter-sign">
+          <div class="sig">— from someone who adores you</div>
+          <div class="wax">🕯️</div>
+        </div>
+
+        <!-- Scroll hint (only appears if overflow exists) -->
+        <div id="scrollHint" class="scroll-hint" aria-hidden="true">Scroll ↓</div>
       </div>
 
       <div class="modal-actions">
@@ -75,6 +127,11 @@
       <div class="modal-hint">Tip: screenshot this 😌</div>
     </div>
   </div>
+
+  <!-- Kiss sound (optional). Put kiss.mp3 in your folder. -->
+  <audio id="kissSfx" preload="auto">
+    <source src="kiss.mp3" type="audio/mpeg" />
+  </audio>
 
   <script src="script.js"></script>
 </body>
