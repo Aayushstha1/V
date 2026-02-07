@@ -12,6 +12,8 @@ const nameModal = document.getElementById("nameModal");
 const nameInput = document.getElementById("nameInput");
 const startBtn = document.getElementById("startBtn");
 
+
+
 // Envelope modal
 const envelopeModal = document.getElementById("envelopeModal");
 const envTitle = document.getElementById("envTitle");

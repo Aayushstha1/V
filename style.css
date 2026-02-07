@@ -564,3 +564,24 @@ h1{
   .letter-margin{ left: 44px; }
   .letter-head, .letter-content, .letter-sign{ padding-left: 64px; }
 }
+
+@media (max-width: 520px){
+  .buttons{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn{
+    width: min(360px, 92vw);
+    font-size: 18px;
+    padding: 16px 20px;
+    letter-spacing: .3px;
+  }
+  .yes{
+    text-shadow: 0 2px 6px rgba(0,0,0,.28);
+  }
+  .no{
+    border: 2px solid rgba(255,255,255,.85);
+    box-shadow: 0 16px 38px rgba(0,0,0,.18);
+  }
+}
