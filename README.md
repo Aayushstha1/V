@@ -48,7 +48,7 @@ project-folder/
 1️⃣ Clone the repository
 
 ```
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/Aayushstha1/V.git
 ```
 
 2️⃣ Open the project folder
